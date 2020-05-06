@@ -1,5 +1,5 @@
 {
-    "name": "covid19-drc",
+    "name": "covid19",
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
