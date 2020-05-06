@@ -59,7 +59,7 @@ export class ChartDoughnutComponent implements OnInit {
       options: {
         legend: {
           display: true,
-          position: 'left'
+          position: 'left',
         },
         scales: {
           xAxes: [{

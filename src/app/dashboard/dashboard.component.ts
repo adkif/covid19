@@ -23,10 +23,13 @@ export class DashboardComponent implements OnInit {
   rr: number;
   dr: number;
   lu: string;
+  isLoading = true;
 
   constructor(private covidService: Covid19Service) { }
 
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatPaginator) set matPaginator(paginator: MatPaginator) {
+    this.dataSource.paginator = paginator;
+  }
 
   ngOnInit(): void {
     this.getData();
@@ -58,7 +61,7 @@ export class DashboardComponent implements OnInit {
     this.rr = this.getRate(dayData.Recovered,  dayData.Confirmed);
     this.lu = dayData.Date;
     this.dataSource =  new MatTableDataSource<ICovid>(this.data.reverse());
-    this.dataSource.paginator = this.paginator;
+    this.isLoading = false;
   }
 
   getRate(value: number, total: number) {

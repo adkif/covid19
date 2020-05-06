@@ -1,4 +1,7 @@
-<div class="container mt-3">
+<div class="w-100 vh-100 d-flex justify-content-center align-items-center" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+</div>
+<div class="container mt-3" *ngIf="!isLoading">
     <div class="row">
         <div class="col-md-3 mb-3">
             <mat-card>
@@ -117,7 +120,7 @@
                 <table mat-table [dataSource]="dataSource" class="w-100">
 
                     <!--- Note that these columns can be defined in any order.
-              The actual rendered columns are set as a property on the row definition" -->
+            The actual rendered columns are set as a property on the row definition" -->
 
                     <!-- Position Column -->
                     <ng-container matColumnDef="Confirmed">
