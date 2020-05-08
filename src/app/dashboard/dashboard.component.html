@@ -3,7 +3,12 @@
 </div>
 <div class="container mt-3" *ngIf="!isLoading">
     <div class="row">
-        <div class="col-md-3 mb-3">
+        <div class="col">
+            <h1>COVID-19 Dashboard</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 mb-3">
             <mat-card>
                 <mat-card-header>
                     <div mat-card-avatar>
@@ -21,7 +26,7 @@
                 </mat-card-content>
             </mat-card>
         </div>
-        <div class="col-md-3 mb-3">
+        <div class="col-lg-3 col-md-6 mb-3">
             <mat-card>
                 <mat-card-header>
                     <div mat-card-avatar>
@@ -39,7 +44,7 @@
                 </mat-card-content>
             </mat-card>
         </div>
-        <div class="col-md-3 mb-3">
+        <div class="col-lg-3 col-md-6 mb-3">
             <mat-card>
                 <mat-card-header>
                     <div mat-card-avatar>
@@ -57,14 +62,14 @@
                 </mat-card-content>
             </mat-card>
         </div>
-        <div class="col-md-3 mb-3">
+        <div class="col-lg-3 col-md-6 mb-3">
             <mat-card>
                 <mat-card-header>
                     <div mat-card-avatar>
                         <mat-icon>accessibility</mat-icon>
                     </div>
                     <mat-card-title>
-                        Active cases
+                        Active
                         <h4>+{{active}}</h4>
                     </mat-card-title>
                 </mat-card-header>
@@ -112,6 +117,11 @@
                 Death rate:
                 <mat-chip color="warn" selected>{{ dr.toFixed(2) }}%</mat-chip>
             </mat-card>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h1>Infection history</h1>
         </div>
     </div>
     <div class="row">
