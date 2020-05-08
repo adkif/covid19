@@ -70,7 +70,7 @@
                 </mat-card-header>
                 <mat-card-content class="d-flex justify-content-center">
                     <mat-chip-list>
-                        <mat-chip color="accent" selected>{{ today.getAcive() }}</mat-chip>
+                        <mat-chip color="accent" selected>{{ today.getActive() }}</mat-chip>
                     </mat-chip-list>
                 </mat-card-content>
             </mat-card>
@@ -92,7 +92,7 @@
         <div class="col-md-3 mb-3">
             <mat-card>
                 Last update:
-                <mat-chip color="primary" selected> {{ lu.substring(0, 10) }} </mat-chip>
+                <mat-chip color="primary" selected> {{ lu }} </mat-chip>
             </mat-card>
         </div>
         <div class="col-md-3 mb-3">
@@ -125,30 +125,30 @@
                     <!-- Position Column -->
                     <ng-container matColumnDef="Confirmed">
                         <th mat-header-cell *matHeaderCellDef> Confirmed </th>
-                        <td mat-cell *matCellDef="let element"> {{element.Confirmed}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.getConfirmed()}} </td>
                     </ng-container>
 
                     <!-- Name Column -->
                     <ng-container matColumnDef="Active">
                         <th mat-header-cell *matHeaderCellDef> Active </th>
-                        <td mat-cell *matCellDef="let element"> {{element.Active}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.getActive()}} </td>
                     </ng-container>
 
                     <!-- Weight Column -->
                     <ng-container matColumnDef="Deaths">
                         <th mat-header-cell *matHeaderCellDef> Deaths </th>
-                        <td mat-cell *matCellDef="let element"> {{element.Deaths}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.getDeaths()}} </td>
                     </ng-container>
 
                     <!-- Symbol Column -->
                     <ng-container matColumnDef="Recovered">
                         <th mat-header-cell *matHeaderCellDef> Recovered </th>
-                        <td mat-cell *matCellDef="let element"> {{element.Recovered}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.getRecovered()}} </td>
                     </ng-container>
 
                     <ng-container matColumnDef="Date">
-                        <th mat-header-cell *matHeaderCellDef> Date(Y-M-D) </th>
-                        <td mat-cell *matCellDef="let element"> {{element.Date.substring(0,10)}} </td>
+                        <th mat-header-cell *matHeaderCellDef> Date </th>
+                        <td mat-cell *matCellDef="let element"> {{element.getDate()}} </td>
                     </ng-container>
 
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

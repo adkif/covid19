@@ -1,14 +1,18 @@
+import * as moment from 'moment';
+moment.locale('en');
 export class Covid {
     private confirmed: number;
     private deaths: number;
     private recovered: number;
     private active: number;
+    private date: string;
 
-    constructor(confirmed: number, deaths: number, recovered: number, active: number) {
+    constructor(confirmed: number, deaths: number, recovered: number, active: number, date: string) {
       this.confirmed = confirmed;
       this.deaths = deaths;
       this.recovered = recovered;
       this.active = active;
+      this.date = date;
     }
 
     public getConfirmed(): number {
@@ -23,8 +27,16 @@ export class Covid {
       return this.recovered;
     }
 
-    public getAcive(): number {
+    public getActive(): number {
       return this.active;
+    }
+
+    public getDate(): string {
+      return  moment(this.date, moment.ISO_8601).calendar();
+    }
+
+    public getLastUpdate() {
+      return  moment(this.date, moment.ISO_8601).fromNow();
     }
 
     public setConfirmed(confirmed: number): void {
@@ -42,4 +54,9 @@ export class Covid {
     public setActive(active: number): void {
       this.active = active;
     }
+
+    public setDate(date: string): void {
+      this.date = date;
+    }
+
 }
