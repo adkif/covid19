@@ -24,7 +24,7 @@
         "@coreui/coreui": "^3.0.0",
         "@mdi/font": "^5.1.45",
         "chart.js": "^2.9.3",
-        "express": "^4.17.1",
+        "express": "^4.17.3",
         "moment": "^2.29.2",
         "ng2-charts": "^2.3.0",
         "rxjs": "~6.5.4",
